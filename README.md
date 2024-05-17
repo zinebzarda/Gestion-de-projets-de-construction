@@ -48,8 +48,6 @@ Git
 ### Étapes d'installation
 Importer le projet dans votre IDE (Eclipse, IntelliJ IDEA).
 Configurer la base de données en modifiant le fichier src/main/resources/db.properties.
-Construire le projet avec Maven :
-
 ### Utilisation
 Authentification
 Se connecter avec vos identifiants.
