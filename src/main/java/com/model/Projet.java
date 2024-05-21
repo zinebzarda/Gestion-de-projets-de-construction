@@ -1,14 +1,14 @@
 package com.model;
 
 public class Projet {
-    private int projet_Id;
+    private Integer projet_Id;
     private String projet_Name;
     private String projet_Description;
     private String startDate;
     private String endDate;
     private double budget;
 
-    public Projet(int projet_Id, String projet_Name, String projet_Description, String startDate, String endDate, double budget) {
+    public Projet(Integer projet_Id, String projet_Name, String projet_Description, String startDate, String endDate, double budget) {
         this.projet_Id = projet_Id;
         this.projet_Name = projet_Name;
         this.projet_Description = projet_Description;
@@ -17,7 +17,15 @@ public class Projet {
         this.budget = budget;
     }
 
-    public int getProjet_Id() {
+    public Projet(String projet_Name, String projet_Description, String startDate, String endDate, double budget) {
+        this.projet_Name = projet_Name;
+        this.projet_Description = projet_Description;
+        this.startDate = startDate;
+        this.endDate = endDate;
+        this.budget = budget;
+    }
+
+    public Integer getProjet_Id() {
         return projet_Id;
     }
 

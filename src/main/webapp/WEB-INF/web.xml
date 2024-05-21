@@ -5,13 +5,38 @@
          version="4.0">
 
     <servlet>
-        <servlet-name>HelloServlet</servlet-name>
-        <servlet-class>com.model.constructionxpert.HelloServlet</servlet-class>
+        <servlet-name>addProjet</servlet-name>
+        <servlet-class>com.servlets.Projet.addProjet</servlet-class>
     </servlet>
-
     <servlet-mapping>
-        <servlet-name>HelloServlet</servlet-name>
-        <url-pattern>/ts</url-pattern>
+        <servlet-name>addProjet</servlet-name>
+        <url-pattern>/addProjet</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>displayProjet</servlet-name>
+        <servlet-class>com.servlets.Projet.displayProjet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>displayProjet</servlet-name>
+        <url-pattern>/shows</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>editProjet</servlet-name>
+        <servlet-class>com.servlets.Projet.editProjet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>editProjet</servlet-name>
+        <url-pattern>/editProjet</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>deleteProjet</servlet-name>
+        <servlet-class>com.servlets.Projet.deleteProjet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>deleteProjet</servlet-name>
+        <url-pattern>/deleteProjet</url-pattern>
     </servlet-mapping>
 </web-app>
 

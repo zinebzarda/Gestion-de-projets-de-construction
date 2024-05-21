@@ -26,21 +26,21 @@ public class ProjetDAOImp implements ProjetDAO {
     }
 
     @Override
-    public  ArrayList<Projet> showProjet() throws SQLException, ClassNotFoundException {
+    public ArrayList<Projet> showProjet() throws SQLException, ClassNotFoundException {
         Connection connection = ConnectionDAO.getConnection();
         ArrayList<Projet> projets = new ArrayList<>();
         String sql = "SELECT * FROM projets";
         try (PreparedStatement statement = connection.prepareStatement(sql);
              ResultSet resultat = statement.executeQuery()) {
             while (resultat.next()) {
-                Integer idProjet = resultat.getInt("projet_Id");
-                String nameProjet = resultat.getString("projet_Name");
-                String descriptionProjet = resultat.getString("projet_Description");
+                Integer projet_Id = resultat.getInt("projet_Id");
+                String projet_Name = resultat.getString("projet_Name");
+                String projet_Description = resultat.getString("projet_Description");
                 String startDate = resultat.getString("startDate");
                 String endDate = resultat.getString("endDate");
                 Double budget = resultat.getDouble("budget");
 
-                Projet projet = new Projet(idProjet, nameProjet,  descriptionProjet,startDate,endDate,budget);
+                Projet projet = new Projet(projet_Id, projet_Name, projet_Description, startDate, endDate, budget);
                 projets.add(projet);
             }
         }
@@ -50,9 +50,8 @@ public class ProjetDAOImp implements ProjetDAO {
     @Override
     public void editProjet(Projet projet) throws SQLException, ClassNotFoundException {
         Connection connection = ConnectionDAO.getConnection();
-        String sql = "UPDATE projets SET projet_Id=?, projet_Name=?, projet_Description=?, startDate=?, endDate=?, budget=? WHERE projet_Id=?";
+        String sql = "UPDATE projets SET  projet_Name=?, projet_Description=?, startDate=?, endDate=?, budget=? WHERE projet_Id=?";
         try (PreparedStatement statement = connection.prepareStatement(sql)) {
-
             statement.setString(1, projet.getProjet_Name());
             statement.setString(2, projet.getProjet_Description());
             statement.setString(3, projet.getStartDate());
@@ -61,7 +60,6 @@ public class ProjetDAOImp implements ProjetDAO {
             statement.setInt(6, projet.getProjet_Id());
             statement.executeUpdate();
         }
-
     }
 
     @Override
@@ -74,4 +72,24 @@ public class ProjetDAOImp implements ProjetDAO {
         }
     }
 
+    @Override
+    public Projet selectBiId(int id) throws SQLException, ClassNotFoundException {
+        Projet projet = null;
+        Connection connection = ConnectionDAO.getConnection();
+        String sql = "SELECT * FROM projets WHERE projet_Id = ?";
+        PreparedStatement statement = connection.prepareStatement(sql);
+        statement.setInt(1, id);
+        ResultSet resultSet = statement.executeQuery();
+        while (resultSet.next()) {
+            projet = new Projet(
+                    resultSet.getInt("projet_Id"),
+                    resultSet.getString("projet_Name"),
+                    resultSet.getString("projet_Description"),
+                    resultSet.getString("startDate"),
+                    resultSet.getString("endDate"),
+                    resultSet.getDouble("budget")
+            );
+        }
+        return projet;
+    }
 }

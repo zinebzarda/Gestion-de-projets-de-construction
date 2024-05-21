@@ -6,7 +6,7 @@ import java.sql.SQLException;
 
 public class ConnectionDAO {
 
-    private static final String jdbcURL = "jdbc:mysql://localhost:3306/ConstructionXpert";
+    private static final String jdbcURL = "jdbc:mysql://localhost:3306/constructionxpert";
     private static final String jdbcUserName = "root";
     private static final String jdbcPassword = "";
     private static final String jdbcDriver = "com.mysql.cj.jdbc.Driver";

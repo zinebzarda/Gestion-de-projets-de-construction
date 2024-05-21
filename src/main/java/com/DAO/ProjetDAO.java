@@ -10,4 +10,5 @@ public interface ProjetDAO {
     ArrayList<Projet> showProjet() throws SQLException, ClassNotFoundException;
     void editProjet(Projet projet) throws SQLException, ClassNotFoundException;
     void deleteProjet(int projet_Id) throws SQLException, ClassNotFoundException;
+    Projet selectBiId(int id) throws SQLException, ClassNotFoundException;
 }
