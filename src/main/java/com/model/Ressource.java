@@ -1,33 +1,43 @@
 package com.model;
 
 public class Ressource {
-    private int idRessource;
-    private String nom;
+    private Integer ressource_Id;
+    private String ressource_name;
     private String type;
-    private int quantite;
+    private Integer quantite;
     private String fournisseur;
+    private Integer tache_Id;
 
-    public Ressource(int idRessource, String nom, String type, int quantite, String fournisseur) {
-        this.idRessource = idRessource;
-        this.nom = nom;
+    public Ressource(Integer ressource_Id, String ressource_name, String type, Integer quantite, String fournisseur, Integer tache_Id) {
+        this.ressource_Id = ressource_Id;
+        this.ressource_name = ressource_name;
         this.type = type;
         this.quantite = quantite;
         this.fournisseur = fournisseur;
+        this.tache_Id = tache_Id;
     }
 
-    public int getIdRessource() {
-        return idRessource;
+    public Ressource(String ressource_name, String type, Integer quantite, String fournisseur, Integer tache_Id) {
+        this.ressource_name = ressource_name;
+        this.type = type;
+        this.quantite = quantite;
+        this.fournisseur = fournisseur;
+        this.tache_Id = tache_Id;
     }
 
-    public String getNom() {
-        return nom;
+    public Integer getRessource_Id() {
+        return ressource_Id;
+    }
+
+    public String getRessource_name() {
+        return ressource_name;
     }
 
     public String getType() {
         return type;
     }
 
-    public int getQuantite() {
+    public Integer getQuantite() {
         return quantite;
     }
 
@@ -35,23 +45,7 @@ public class Ressource {
         return fournisseur;
     }
 
-    public void setIdRessource(int idRessource) {
-        this.idRessource = idRessource;
-    }
-
-    public void setNom(String nom) {
-        this.nom = nom;
-    }
-
-    public void setType(String type) {
-        this.type = type;
-    }
-
-    public void setQuantite(int quantite) {
-        this.quantite = quantite;
-    }
-
-    public void setFournisseur(String fournisseur) {
-        this.fournisseur = fournisseur;
+    public Integer getTache_Id() {
+        return tache_Id;
     }
 }
