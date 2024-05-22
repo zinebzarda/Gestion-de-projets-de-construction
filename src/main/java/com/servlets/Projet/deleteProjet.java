@@ -24,26 +24,17 @@ public class deleteProjet extends HttpServlet {
         Integer projet_Id = Integer.parseInt(request.getParameter("projet_Id"));
         try {
             projetDAO.deleteProjet(projet_Id);
-            request.setAttribute("shows", projetDAO.showProjet());
+            request.setAttribute("showP", projetDAO.showProjet());
         } catch (SQLException e) {
             throw new ServletException("Failed to delete projet", e);
         } catch (ClassNotFoundException e) {
             throw new RuntimeException(e);
         }
-        request.getRequestDispatcher("/displayProjet.jsp").forward(request, response);
+        request.getRequestDispatcher("/Projet/displayProjet.jsp").forward(request, response);
     }
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        Integer projet_Id = Integer.parseInt(request.getParameter("projet_Id"));
-        try {
-            projetDAO.deleteProjet(projet_Id);
-            request.setAttribute("shows", projetDAO.showProjet());
-        } catch (SQLException e) {
-            throw new ServletException("Failed to delete projet", e);
-        } catch (ClassNotFoundException e) {
-            throw new RuntimeException(e);
-        }
-        request.getRequestDispatcher("/displayProjet.jsp").forward(request, response);
+        request.getRequestDispatcher("/Projet/displayProjet.jsp").forward(request, response);
     }
 }

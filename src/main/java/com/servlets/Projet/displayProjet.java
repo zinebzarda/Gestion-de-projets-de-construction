@@ -14,14 +14,14 @@ public class displayProjet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         ProjetDAOImp show=new ProjetDAOImp();
         try {
-            request.setAttribute("shows", show.showProjet());
+            request.setAttribute("showP", show.showProjet());
         } catch (SQLException e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
         } catch (ClassNotFoundException e) {
             throw new RuntimeException(e);
         }
-        this.getServletContext().getRequestDispatcher("/displayProjet.jsp").forward(request, response);
+        this.getServletContext().getRequestDispatcher("/Projet/displayProjet.jsp").forward(request, response);
 
     }
 

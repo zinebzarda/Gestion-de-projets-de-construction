@@ -4,13 +4,15 @@
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
          version="4.0">
 
+
+    <!--                 Projet                -->
     <servlet>
         <servlet-name>addProjet</servlet-name>
         <servlet-class>com.servlets.Projet.addProjet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>addProjet</servlet-name>
-        <url-pattern>/addProjet</url-pattern>
+        <url-pattern>/addP</url-pattern>
     </servlet-mapping>
 
     <servlet>
@@ -19,7 +21,7 @@
     </servlet>
     <servlet-mapping>
         <servlet-name>displayProjet</servlet-name>
-        <url-pattern>/shows</url-pattern>
+        <url-pattern>/showP</url-pattern>
     </servlet-mapping>
 
     <servlet>
@@ -38,5 +40,44 @@
         <servlet-name>deleteProjet</servlet-name>
         <url-pattern>/deleteProjet</url-pattern>
     </servlet-mapping>
+
+
+    <!--                 Tache                -->
+
+    <servlet>
+        <servlet-name>addTache</servlet-name>
+        <servlet-class>com.servlets.Tache.addTache</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>addTache</servlet-name>
+        <url-pattern>/addTache</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>displayTache</servlet-name>
+        <servlet-class>com.servlets.Tache.displayTache</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>displayTache</servlet-name>
+        <url-pattern>/showT</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>editTache</servlet-name>
+        <servlet-class>com.servlets.Tache.editTache</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>editTache</servlet-name>
+        <url-pattern>/editTache</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>deleteTache</servlet-name>
+        <servlet-class>com.servlets.Tache.deleteTache</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>deleteTache</servlet-name>
+        <url-pattern>/deleteTache</url-pattern>
+    </servlet-mapping>
+
 </web-app>
 

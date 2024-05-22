@@ -14,7 +14,8 @@ import java.sql.SQLException;
 public class addProjet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        this.getServletContext().getRequestDispatcher("/addProjet.jsp").forward(request, response);
+
+        this.getServletContext().getRequestDispatcher("/Projet/addProjet.jsp").forward(request, response);
     }
 
     @Override
@@ -38,6 +39,6 @@ public class addProjet extends HttpServlet {
         }
 
 
-        response.sendRedirect("shows");
+        response.sendRedirect("showP");
     }
 }

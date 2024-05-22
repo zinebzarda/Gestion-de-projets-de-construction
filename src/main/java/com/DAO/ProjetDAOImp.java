@@ -11,18 +11,17 @@ public class ProjetDAOImp implements ProjetDAO {
     @Override
     public void addProjet(Projet projet) throws SQLException, ClassNotFoundException {
         Connection connection = ConnectionDAO.getConnection();
-        String sql = "INSERT INTO projets (projet_Id, projet_Name, projet_Description, startDate, endDate, budget)\n" +
-                "VALUES ( ?, ?, ?, ?, ?, ?);";
+        String sql = "INSERT INTO projets (projet_Name, projet_Description, startDate, endDate, budget)\n" +
+                "VALUES ( ?, ?, ?, ?, ?);";
         try (PreparedStatement statement = connection.prepareStatement(sql)) {
-            statement.setInt(1, projet.getProjet_Id());
-            statement.setString(2, projet.getProjet_Name());
-            statement.setString(3, projet.getProjet_Description());
-            statement.setString(4, projet.getStartDate());
-            statement.setString(5, projet.getEndDate());
-            statement.setDouble(6, projet.getBudget());
+
+            statement.setString(1, projet.getProjet_Name());
+            statement.setString(2, projet.getProjet_Description());
+            statement.setString(3, projet.getStartDate());
+            statement.setString(4, projet.getEndDate());
+            statement.setDouble(5, projet.getBudget());
             statement.executeUpdate();
         }
-
     }
 
     @Override

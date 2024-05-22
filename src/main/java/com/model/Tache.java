@@ -1,57 +1,56 @@
 package com.model;
 
 public class Tache {
-    private int idTache;
-    private String description;
-    private String dateDebut;
-    private String dateFin;
-    private String statut;
+    private Integer tache_Id;
+    private String name_tache;
+    private String tache_Description;
+    private String startDate;
+    private String endDate;
+    private String status;
+    private Integer projet_Id;
 
-    public Tache(int idTache, String description, String dateDebut, String dateFin, String statut) {
-        this.idTache = idTache;
-        this.description = description;
-        this.dateDebut = dateDebut;
-        this.dateFin = dateFin;
-        this.statut = statut;
+    public Tache(Integer tache_Id, String name_tache, String tache_Description, String startDate, String endDate, String status, Integer projet_Id) {
+        this.tache_Id = tache_Id;
+        this.name_tache = name_tache;
+        this.tache_Description = tache_Description;
+        this.startDate = startDate;
+        this.endDate = endDate;
+        this.status = status;
+        this.projet_Id = projet_Id;
     }
 
-    public int getIdTache() {
-        return idTache;
+    public Tache(String name_tache, String tache_Description, String startDate, String endDate, String status, Integer projet_Id) {
+        this.name_tache = name_tache;
+        this.tache_Description = tache_Description;
+        this.startDate = startDate;
+        this.endDate = endDate;
+        this.status = status;
+        this.projet_Id = projet_Id;
     }
 
-    public String getDescription() {
-        return description;
+    public Integer getTache_Id() {
+        return tache_Id;
     }
 
-    public String getDateDebut() {
-        return dateDebut;
+    public String getName_tache() { return name_tache;}
+
+    public String getTache_Description() {
+        return tache_Description;
     }
 
-    public String getDateFin() {
-        return dateFin;
+    public String getStartDate() {
+        return startDate;
     }
 
-    public String getStatut() {
-        return statut;
+    public String getEndDate() {
+        return endDate;
     }
 
-    public void setIdTache(int idTache) {
-        this.idTache = idTache;
+    public String getStatus() {
+        return status;
     }
 
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
-    public void setDateDebut(String dateDebut) {
-        this.dateDebut = dateDebut;
-    }
-
-    public void setDateFin(String dateFin) {
-        this.dateFin = dateFin;
-    }
-
-    public void setStatut(String statut) {
-        this.statut = statut;
+    public Integer getProjet_Id() {
+        return projet_Id;
     }
 }

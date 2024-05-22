@@ -23,7 +23,7 @@ public class editProjet extends HttpServlet {
         } catch (SQLException | ClassNotFoundException e) {
             throw new RuntimeException(e);
         }
-        this.getServletContext().getRequestDispatcher("/editProjet.jsp").forward(request, response);
+        this.getServletContext().getRequestDispatcher("/Projet/editProjet.jsp").forward(request, response);
     }
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -39,12 +39,12 @@ public class editProjet extends HttpServlet {
         ProjetDAOImp projetDAO = new ProjetDAOImp();
         try {
             projetDAO.editProjet(projet);
-            request.setAttribute("shows", projetDAO.showProjet());
+            request.setAttribute("showP", projetDAO.showProjet());
         } catch (SQLException e) {
             e.printStackTrace();
         } catch (ClassNotFoundException e) {
             throw new RuntimeException(e);
         }
-        this.getServletContext().getRequestDispatcher("/displayProjet.jsp").forward(request, response);
+        this.getServletContext().getRequestDispatcher("/Projet/displayProjet.jsp").forward(request, response);
     }
 }
