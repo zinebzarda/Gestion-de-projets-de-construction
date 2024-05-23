@@ -12,7 +12,7 @@ public class RessourceDAOImp implements RessourceDAO {
     @Override
     public void addRessource(Ressource ressource) throws SQLException, ClassNotFoundException {
         Connection connection = ConnectionDAO.getConnection();
-        String sql = "INSERT INTO  ressources ( ressource_name, type, quantite, fournisseur, tache_Id)\n" +
+        String sql = "INSERT INTO  ressources (ressource_name, type, quantite, fournisseur, tache_Id)\n" +
                 "VALUES ( ?, ?, ?, ?, ?);";
         try (PreparedStatement statement = connection.prepareStatement(sql)) {
             statement.setString(1, ressource.getRessource_name());

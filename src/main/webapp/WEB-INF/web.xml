@@ -79,5 +79,44 @@
         <url-pattern>/deleteTache</url-pattern>
     </servlet-mapping>
 
+
+    <!--                 Ressource                -->
+
+    <servlet>
+        <servlet-name>addRessource</servlet-name>
+        <servlet-class>com.servlets.Ressource.addRessource</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>addRessource</servlet-name>
+        <url-pattern>/addRessource</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>displayRessource</servlet-name>
+        <servlet-class>com.servlets.Ressource.displayRessource</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>displayRessource</servlet-name>
+        <url-pattern>/showR</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>editRessource</servlet-name>
+        <servlet-class>com.servlets.Ressource.editRessource</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>editRessource</servlet-name>
+        <url-pattern>/editRessource</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>deleteRessource</servlet-name>
+        <servlet-class>com.servlets.Ressource.deleteRessource</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>deleteRessource</servlet-name>
+        <url-pattern>/deleteRessource</url-pattern>
+    </servlet-mapping>
+
+
 </web-app>
 
