@@ -51,6 +51,30 @@ public class TacheDAOImp implements TacheDAO {
     }
 
     @Override
+    public ArrayList<Tache> showTP(int id_Projet) throws SQLException, ClassNotFoundException {
+        Connection connection = ConnectionDAO.getConnection();
+        ArrayList<Tache> taches = new ArrayList<>();
+        String sql = "SELECT * FROM taches where projet_Id=?";
+        PreparedStatement statement = connection.prepareStatement(sql);
+             statement.setInt(1, id_Projet);
+
+             ResultSet resultat = statement.executeQuery();
+            while (resultat.next()) {
+                Integer tache_Id = resultat.getInt("tache_Id");
+                String name_tache = resultat.getString("name_tache");
+                String tache_Description = resultat.getString("tache_Description");
+                String startDate = resultat.getString("startDate");
+                String endDate = resultat.getString("endDate");
+                String status = resultat.getString("status");
+
+                Tache tache = new Tache(tache_Id,name_tache, tache_Description, startDate, endDate, status,id_Projet);
+                taches.add(tache);
+            }
+
+        return taches;
+    }
+
+    @Override
     public void editTache(Tache tache) throws SQLException, ClassNotFoundException {
         Connection connection = ConnectionDAO.getConnection();
         String sql = "UPDATE taches SET name_tache=?, tache_Description=?, startDate=?, endDate=?, status=?, projet_Id=? WHERE tache_Id=?";

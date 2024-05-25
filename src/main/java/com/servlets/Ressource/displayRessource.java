@@ -14,8 +14,9 @@ public class displayRessource extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         RessourceDAOImp show=new RessourceDAOImp();
+        int tache_Id = Integer.parseInt(request.getParameter("tache_Id"));
         try {
-            request.setAttribute("showR", show.showRessource());
+            request.setAttribute("showR", show.showRT(tache_Id));
         } catch (SQLException e) {
             // TODO Auto-generated catch block
             e.printStackTrace();

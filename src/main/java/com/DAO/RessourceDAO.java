@@ -11,6 +11,8 @@ public interface RessourceDAO {
 
     ArrayList<Ressource> showRessource() throws SQLException, ClassNotFoundException;
 
+    ArrayList<Ressource> showRT(int tache_Id) throws SQLException, ClassNotFoundException;
+
     void editRessource(Ressource ressource) throws SQLException, ClassNotFoundException;
 
     void deleteRessource(int ressource_Id) throws SQLException, ClassNotFoundException;

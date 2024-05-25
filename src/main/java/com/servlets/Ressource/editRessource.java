@@ -41,7 +41,7 @@ public class editRessource extends HttpServlet {
         RessourceDAOImp ressourceDAo = new RessourceDAOImp();
         try {
             ressourceDAo.editRessource(ressource);
-            request.setAttribute("showT", ressourceDAo.showRessource());
+            request.setAttribute("showR", ressourceDAo.showRessource());
         } catch (SQLException e) {
             e.printStackTrace();
         } catch (ClassNotFoundException e) {

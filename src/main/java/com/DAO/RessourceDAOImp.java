@@ -48,6 +48,27 @@ public class RessourceDAOImp implements RessourceDAO {
     }
 
     @Override
+    public ArrayList<Ressource> showRT(int tache_Id ) throws SQLException, ClassNotFoundException {
+        Connection connection = ConnectionDAO.getConnection();
+        ArrayList<Ressource> ressourses = new ArrayList<>();
+        String sql = "SELECT * FROM ressources where tache_Id=? ";
+       PreparedStatement statement = connection.prepareStatement(sql);
+        statement.setInt(1, tache_Id);
+             ResultSet resultat = statement.executeQuery();
+            while (resultat.next()) {
+                Integer ressource_Id = resultat.getInt("ressource_Id");
+                String ressource_name = resultat.getString("ressource_name");
+                String type = resultat.getString("type");
+                Integer quantite = resultat.getInt("quantite");
+                String fournisseur = resultat.getString("fournisseur");
+
+                Ressource ressource = new Ressource(ressource_Id,ressource_name, type, quantite, fournisseur, tache_Id);
+                ressourses.add(ressource);
+            }
+        return ressourses;
+    }
+
+    @Override
     public void editRessource(Ressource ressource) throws SQLException, ClassNotFoundException {
         Connection connection = ConnectionDAO.getConnection();
         String sql = "UPDATE ressources SET ressource_name=?, type=?, quantite=?, fournisseur=?, tache_Id=? WHERE ressource_Id=?";

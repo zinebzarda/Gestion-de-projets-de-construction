@@ -14,8 +14,9 @@ public class displayTache extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         TacheDAOImp show=new TacheDAOImp();
+        int projet_Id = Integer.parseInt(request.getParameter("projet_Id"));
         try {
-            request.setAttribute("showT", show.showTache());
+            request.setAttribute("showT", show.showTP(projet_Id));
         } catch (SQLException e) {
             // TODO Auto-generated catch block
             e.printStackTrace();

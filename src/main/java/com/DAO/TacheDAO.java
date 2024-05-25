@@ -11,4 +11,5 @@ public interface TacheDAO {
     void editTache(Tache tache) throws SQLException, ClassNotFoundException;
     void deleteTache(int tache_Id) throws SQLException, ClassNotFoundException;
     Tache selectBiId(int id) throws SQLException, ClassNotFoundException;
+     ArrayList<Tache> showTP(int id_Projet) throws SQLException, ClassNotFoundException;
 }
