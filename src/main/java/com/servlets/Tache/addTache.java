@@ -35,12 +35,11 @@ public class addTache extends HttpServlet {
         String endDate = request.getParameter("endDate");
         String status = request.getParameter("status");
         Integer projet_Id = Integer.parseInt(request.getParameter("projet_Id"));
-
-
         TacheDAOImp tacheDAO = new TacheDAOImp();
         Tache tache = new Tache(name_tache,tache_Description, startDate, endDate, status, projet_Id);
         try {
             tacheDAO.addTache(tache);
+
         } catch (SQLException e) {
             throw new RuntimeException(e);
         } catch (ClassNotFoundException e) {
@@ -48,6 +47,6 @@ public class addTache extends HttpServlet {
         }
 
 
-        response.sendRedirect("showT");
+        response.sendRedirect("/Tache/displayTache.jsp");
     }
     }

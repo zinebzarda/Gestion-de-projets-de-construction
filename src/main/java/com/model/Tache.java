@@ -53,4 +53,8 @@ public class Tache {
     public Integer getProjet_Id() {
         return projet_Id;
     }
+
+    public void setProjet_Id(Integer projet_Id) {
+        this.projet_Id = projet_Id;
+    }
 }
