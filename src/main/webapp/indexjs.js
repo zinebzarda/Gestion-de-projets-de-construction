@@ -25,3 +25,12 @@ var swiper = new Swiper(".mySwiper", {
     disableOnInteraction: false,
   },
 });
+
+// poup up
+function openForm() {
+  document.getElementById("modalForm").style.display = "flex";
+}
+
+function closeForm() {
+  document.getElementById("modalForm").style.display = "none";
+}

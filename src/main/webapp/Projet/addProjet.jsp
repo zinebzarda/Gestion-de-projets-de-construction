@@ -75,7 +75,7 @@
     </style>
 </head>
 <body>
-<form action="addP" method="post">
+<form action="addProjet" method="post">
     <div>
         <input type="text" class="" id="projet_Name" name="projet_Name">
         <label for="projet_Name"> projet Name</label>

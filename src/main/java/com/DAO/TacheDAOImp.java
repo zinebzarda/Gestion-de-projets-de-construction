@@ -13,15 +13,15 @@ public class TacheDAOImp implements TacheDAO {
     @Override
     public void addTache(Tache tache) throws SQLException, ClassNotFoundException {
         Connection connection = ConnectionDAO.getConnection();
-        String sql = "INSERT INTO taches ( name_tache, tache_Description, startDate, endDate, status, projet_Id)\n" +
+        String sql = "INSERT INTO taches ( tache_Description, startDate, endDate, status, projet_Id, name_tache)\n" +
                 "VALUES ( ?, ?, ?, ?, ?, ?);";
         try (PreparedStatement statement = connection.prepareStatement(sql)) {
-            statement.setString(1, tache.getName_tache());
-            statement.setString(2, tache.getTache_Description());
-            statement.setString(3, tache.getStartDate());
-            statement.setString(4, tache.getEndDate());
-            statement.setString(5, tache.getStatus());
-            statement.setInt(6, tache.getProjet_Id());
+            statement.setString(1, tache.getTache_Description());
+            statement.setString(2, tache.getStartDate());
+            statement.setString(3, tache.getEndDate());
+            statement.setString(4, tache.getStatus());
+            statement.setInt(5, tache.getProjet_Id());
+            statement.setString(6, tache.getName_tache());
             statement.executeUpdate();
         }
 

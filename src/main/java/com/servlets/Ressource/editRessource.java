@@ -47,6 +47,5 @@ public class editRessource extends HttpServlet {
         } catch (ClassNotFoundException e) {
             throw new RuntimeException(e);
         }
-        this.getServletContext().getRequestDispatcher("/Ressource/displayRessource.jsp").forward(request, response);
-    }
+        response.sendRedirect(request.getContextPath() + "/showR?tache_Id=" + tache_Id);    }
 }

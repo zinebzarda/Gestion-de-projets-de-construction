@@ -12,7 +12,7 @@
     </servlet>
     <servlet-mapping>
         <servlet-name>addProjet</servlet-name>
-        <url-pattern>/addP</url-pattern>
+        <url-pattern>/addProjet</url-pattern>
     </servlet-mapping>
 
     <servlet>

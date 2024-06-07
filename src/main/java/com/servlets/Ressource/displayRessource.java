@@ -13,6 +13,15 @@ import java.sql.SQLException;
 public class displayRessource extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        TacheDAOImp showt=new TacheDAOImp();
+        try {
+            request.setAttribute("showT", showt.showTache());
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        } catch (ClassNotFoundException e) {
+            throw new RuntimeException(e);
+        }
+
         RessourceDAOImp show=new RessourceDAOImp();
         int tache_Id = Integer.parseInt(request.getParameter("tache_Id"));
         try {
